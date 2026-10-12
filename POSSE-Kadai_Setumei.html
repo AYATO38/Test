@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSSE課題のフォルダ構成</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 leading-relaxed min-h-screen">
+    <main class="max-w-2xl mx-auto px-4 py-12 space-y-6">
+        <h1 class="text-2xl font-bold">POSSE課題のフォルダ構成</h1>
+
+        <pre class="bg-slate-900 text-slate-100 rounded-xl p-5 text-sm leading-6 overflow-x-auto"><code><span class="text-yellow-300">workspace/</span>
+└── <span class="text-yellow-300">POSSE-Kadai/</span>
+    ├── <span class="text-sky-300">PH1/</span>  week01_POSSE-Kadai/ 〜 week04_POSSE-Kadai/
+    ├── <span class="text-sky-300">PH2/</span>  week05_POSSE-Kadai/ 〜 week08_POSSE-Kadai/
+    ├── <span class="text-sky-300">PH3/</span>  week09_POSSE-Kadai/ 〜 week12_POSSE-Kadai/
+    └── <span class="text-sky-300">PH4/</span>  week13_POSSE-Kadai/ 〜 week16_POSSE-Kadai/</code></pre>
+
+        <section class="bg-red-50 border-l-4 border-red-400 rounded-r-lg p-5 text-sm">
+            <h2 class="font-bold text-red-700">注意：ファイル名・フォルダ名は半角英数字と <code class="bg-white px-1 rounded">-</code> <code class="bg-white px-1 rounded">_</code>（と拡張子の <code class="bg-white px-1 rounded">.</code>）で付ける</h2>
+            <p class="mt-2">例：<span class="line-through text-slate-400">POSSE課題.html</span> → <code class="bg-white px-1 rounded">POSSE-Kadai_Setumei.html</code></p>
+
+            <h3 class="mt-3 font-bold">日本語を避ける理由</h3>
+            <ul class="mt-1 space-y-1 list-disc pl-5 text-slate-700">
+                <li>Git の表示で <code class="bg-white px-1 rounded">"POSSE\350\252\262..."</code> のように文字化けする</li>
+                <li>URL に含めると <code class="bg-white px-1 rounded">%E8%AA%B2...</code> と変換され、リンクが扱いにくい</li>
+                <li>Mac と Windows で文字の扱いが違い、別のファイルとして認識されることがある</li>
+            </ul>
+
+            <h3 class="mt-3 font-bold">記号を避ける理由</h3>
+            <ul class="mt-1 space-y-1 list-disc pl-5 text-slate-700">
+                <li><strong>スペース</strong>：ターミナルで <code class="bg-white px-1 rounded">"my file.html"</code> と囲む必要があり、URL では <code class="bg-white px-1 rounded">%20</code> になる</li>
+                <li><code class="bg-white px-1 rounded">\ / : * ? " &lt; &gt; |</code>：Windows では使えず、clone に失敗する</li>
+                <li><code class="bg-white px-1 rounded"># % &amp;</code>：URL で特別な意味を持ち、リンクが壊れやすい</li>
+                <li><code class="bg-white px-1 rounded">( ) ! $</code>：ターミナルで特別な意味を持ち、入力ミスの原因になる</li>
+                <li><code class="bg-white px-1 rounded">.</code> で始める：Mac / Linux では隠しファイルになる</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
